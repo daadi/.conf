@@ -1,0 +1,36 @@
+snippet func
+	CREATE${1: OR REPLACE} FUNCTION ${2:schema.function}(${3:/* args */}) RETURNS ${4:void} LANGUAGE ${5:plpgsql} AS $$
+	/*{{{*/
+	DECLARE
+		${6:/* declarations */}
+	BEGIN
+		${7:/* body */}
+	END;
+	$$; /*}}}*/
+
+snippet trig
+	CREATE TRIGGER ${1:name} ${2:BEFORE|AFTER} ${3:INSERT OR DELETE OR TRUNCATE OR UPDATE OF col1, col2}
+		ON ${4:table} FOR EACH ${5:ROW|STATEMENT}
+		${6:WHEN /* condition */}
+		EXECUTE PROCEDURE ${7:function( arguments )};
+
+snippet case
+	CASE WHEN ${1:/* condition */} THEN
+		${2:/* statements */}
+	WHEN ${3:/* condition2 */} THEN
+		${4:/* statements */}
+	ELSE
+		${5:/* statements */}
+	END CASE;
+
+snippet fo
+	/*{{{*/
+snippet fc
+	/*}}}*/
+
+snippet block
+	do language plpgsql $$
+	declare
+	begin
+	end;
+	$$;
