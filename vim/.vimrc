@@ -143,6 +143,12 @@ if has("autocmd")
 		autocmd FileType {xml,xslt} setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235 
 	augroup END
 
+	augroup PYTHON
+		autocmd!
+
+		autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+	augroup END
+
 	" show cursor position
 	"autocmd BufLeave * setlocal nocursorcolumn nocursorline
 	"autocmd BufEnter * setlocal cursorline cursorcolumn
@@ -249,6 +255,4 @@ let tlist_sql_settings = 'sql;c:cursor;P:package;r:record;' .
             \ 's:subtype;t:table;V:view;T:trigger;v:variable;f:function;p:procedure'
 
 command W w !sudo tee % > /dev/null
-
-au BufNewFile,BufRead *.jy setf python
 
