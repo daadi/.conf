@@ -200,7 +200,7 @@ map Y y$
 
 "map <F1> :
 
-map <F5> :make<CR>
+nnoremap <F5> "=strftime("%G-%m-%d %H:%M:%S")<CR>P
 map <F6> :cc<CR>
 map <F7> :cprev<CR>
 map <F8> :cnext<CR>
